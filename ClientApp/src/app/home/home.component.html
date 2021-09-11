@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-6">
+    <table>
+      <tr>
+        <th>Top Level Account</th>
+        <th>Total Balance</th>
+        <th>Details</th>
+      </tr>
+      <tr *ngFor="let account of accounts">
+        <td>{{account.topLevelAccount}}</td>
+        <td>{{account.totalBalance}}</td>
+
+        <td><button class="button button2" (click)="onDetails(account.topLevelAccount)">Details</button></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-6 card">
+    <div *ngFor="let acc of accountDetails">
+      Account
+      <strong *ngFor="let num of acc.accountNumbers">
+        {{num}}
+      </strong>
+      =
+      {{acc.balance}}
+    </div>
+  </div>
+</div>
